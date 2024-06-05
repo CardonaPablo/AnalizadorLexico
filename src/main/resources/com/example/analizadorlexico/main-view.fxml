@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="520.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.analizadorlexico.AnalizadorLexicoController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="Archivo">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#onOpenFile" text="Abrir" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" onAction="#onQuit" text="Salir" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+      <AnchorPane prefHeight="446.0" prefWidth="1000.0" VBox.vgrow="ALWAYS">
+         <children>
+            <TextArea fx:id="editor" layoutX="433.0" layoutY="14.0" prefHeight="437.0" prefWidth="553.0" text="/*EsteArchivoEsDeFacil_Lectura_Para_el_Aut%mata*/&#10;&#10;if ( numero &gt;= 17.34 ) {&#10;&#9;dato = 25..18&#10;&#9;print ( &quot;Hola_Mundo&quot; )&#10;&#9;valor ++&#10;&#9;}&#10;&#10;//Otro_Comentario&#10;&#9;&#10;while ( dato != hola &amp;&amp; valor &lt;. 5 ) { &#10;&#9;x = dato - numero &#10;&#9;valor --&#10;}" />
+            <Accordion layoutX="22.0" layoutY="14.0" prefHeight="463.0" prefWidth="382.0">
+              <panes>
+                <TitledPane fx:id="identificadoresPane" animated="false" text="Identificadores: 0">
+                     <content>
+                        <ListView prefHeight="200.0" prefWidth="200.0" />
+                     </content>
+                </TitledPane>
+                <TitledPane fx:id="palabrasReservadasPane" animated="false" text="Palabras reservadas: 0">
+                     <content>
+                        <ListView prefHeight="200.0" prefWidth="200.0" />
+                     </content>
+                </TitledPane>
+                  <TitledPane fx:id="operadoresRelacionalesPane" animated="false" text="Operadores relacionales: 0">
+                     <content>
+                        <ListView prefHeight="200.0" prefWidth="200.0" />
+                     </content>
+                  </TitledPane>
+                  <TitledPane fx:id="operadoresLogicosPane" animated="false" text="Operadores logicos: 0">
+                     <content>
+                        <ListView prefHeight="200.0" prefWidth="200.0" />
+                     </content>
+                  </TitledPane>
+                <TitledPane fx:id="operadoresAritmeticosPane" animated="false" text="Operadores aritmeticos: 0">
+                     <content>
+                        <ListView prefHeight="200.0" prefWidth="200.0" />
+                     </content>
+                </TitledPane>
+                  <TitledPane fx:id="numeroEnteroPane" animated="false" text="Enteros: 0">
+                     <content>
+                        <ListView prefHeight="200.0" prefWidth="200.0" />
+                     </content>
+                  </TitledPane>
+                  <TitledPane fx:id="numeroDecimalPane" animated="false" text="Decimales: 0">
+                     <content>
+                        <ListView prefHeight="200.0" prefWidth="200.0" />
+                     </content>
+                  </TitledPane>
+                  <TitledPane fx:id="cadenaCaracteresPane" animated="false" text="Cadenas de caracteres: 0">
+                     <content>
+                        <ListView prefHeight="200.0" prefWidth="200.0" />
+                     </content>
+                  </TitledPane>
+                  <TitledPane fx:id="comentarioPane" animated="false" text="Comentarios: 0">
+                     <content>
+                        <ListView prefHeight="200.0" prefWidth="200.0" />
+                     </content>
+                  </TitledPane>
+                  <TitledPane fx:id="comentarioLineaPane" animated="false" text="Comentarios de linea: 0">
+                     <content>
+                        <ListView prefHeight="200.0" prefWidth="200.0" />
+                     </content>
+                  </TitledPane>
+                  <TitledPane fx:id="singularesPane" animated="false" text="Singulares">
+                     <content>
+                        <ListView prefHeight="247.0" prefWidth="210.0" />
+                     </content>
+                  </TitledPane>
+                  <TitledPane fx:id="errorPane" animated="false" text="Errores: 0">
+                     <content>
+                        <ListView prefHeight="247.0" prefWidth="210.0" />
+                     </content>
+                  </TitledPane>
+              </panes>
+            </Accordion>
+            <Button layoutX="866.0" layoutY="458.0" mnemonicParsing="false" onAction="#onClickAnalyze" prefHeight="25.0" prefWidth="120.0" text="Analizar" />
+         </children>
+      </AnchorPane>
+  </children>
+</VBox>
