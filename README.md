@@ -23,3 +23,7 @@ Utilizando como delimitadores: espacio, tabulador y fin de linea.
 
 Mapea un autómata finito determinista, evauando caracter por caracter
 
+---
+## Requirements
+Java 20 SDK
+JavaFX
